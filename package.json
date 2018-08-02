@@ -12,5 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-root-import": "^6.1.0",
+    "react-app-rewired": "^1.5.2"
   }
 }
