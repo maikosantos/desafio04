@@ -1,13 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
 import "./styles/global";
 
 import "./config/reactotron";
 
-class App extends Component {
-    render() {
-        return <div className="App">Opa</div>;
-    }
-}
+import Routes from "./routes";
+
+const App = () => (
+    <BrowserRouter>
+        <div>
+            <Routes />
+        </div>
+    </BrowserRouter>
+);
 
 export default App;
