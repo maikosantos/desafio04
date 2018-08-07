@@ -1,18 +1,21 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
+import "./config/reactotron";
 import "./styles/global";
 
-import "./config/reactotron";
-
 import Routes from "./routes";
+import store from "./store";
 
 const App = () => (
-    <BrowserRouter>
-        <div>
-            <Routes />
-        </div>
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <div>
+                <Routes />
+            </div>
+        </BrowserRouter>
+    </Provider>
 );
 
 export default App;
