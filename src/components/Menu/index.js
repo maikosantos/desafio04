@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Creators as CategoriesActions } from "../../store/ducks/categories";
 
-// import styles from './styles';
+import { Container, Nav } from "./styles";
 
 class Menu extends Component {
     componentDidMount() {
@@ -15,15 +15,17 @@ class Menu extends Component {
 
     render() {
         return (
-            <nav>
-                {this.props.categories.data.map(category => (
-                    <li key={category.id}>
-                        <Link to={`categories/${category.id}`}>
-                            {category.title}
-                        </Link>
-                    </li>
-                ))}
-            </nav>
+            <Container>
+                <Nav>
+                    {this.props.categories.data.map(category => (
+                        <li key={category.id}>
+                            <Link to={`categories/${category.id}`}>
+                                {category.title}
+                            </Link>
+                        </li>
+                    ))}
+                </Nav>
+            </Container>
         );
     }
 }
