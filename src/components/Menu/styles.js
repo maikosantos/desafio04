@@ -7,7 +7,7 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 120px 230px;
+    margin: 20px 230px;
 `;
 
 export const Nav = styled.ul`

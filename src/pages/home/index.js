@@ -1,11 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import Menu from "../../components/Menu";
+import Header from "../../components/Header";
 
 const Home = () => (
-    <h1>
-        Home <Menu />
-    </h1>
+    <Fragment>
+        <Header /> <Menu />
+    </Fragment>
 );
 
 export default Home;
