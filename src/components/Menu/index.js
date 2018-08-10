@@ -10,7 +10,7 @@ import { Container, Nav } from "./styles";
 class Menu extends Component {
     componentDidMount() {
         this.props.getCategoriesRequest();
-        console.log(this.props.categories);
+        //console.log(this.props.categories);
     }
 
     render() {

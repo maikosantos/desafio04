@@ -10,8 +10,8 @@ import { Container, Logo, Carrinho } from "./styles";
 
 class Header extends Component {
     componentDidMount() {
-        this.props.getCategoriesRequest();
-        console.log(this.props.categories);
+        //this.props.getCategoriesRequest();
+        //console.log(this.props.categories);
     }
 
     render() {
