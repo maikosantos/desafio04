@@ -11,8 +11,12 @@ export const Container = styled.header`
 `;
 
 export const Logo = styled.div`
-    color: #ff9696;
-    font-weight: 900;
+    a {
+        color: #ff9696;
+        font-weight: 900;
+        text-decoration: none;
+        line-height: 32px;
+    }
 `;
 
 export const Carrinho = styled.div`

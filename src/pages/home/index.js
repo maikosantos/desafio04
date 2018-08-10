@@ -9,7 +9,7 @@ import Header from "../../components/Header";
 
 import { ContainerProducts } from "./styles";
 
-import Product from "../../assets/images/product.jpg";
+//import Product from "../../assets/images/product.jpg";
 
 class Home extends Component {
     componentDidMount() {

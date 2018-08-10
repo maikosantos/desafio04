@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -18,7 +19,9 @@ class Header extends Component {
         return (
             <Container>
                 <Logo>
-                    <h1>GoCommerce</h1>
+                    <h1>
+                        <Link to="/">GoCommerce</Link>
+                    </h1>
                 </Logo>
                 <Carrinho>
                     <img src={ShoppingCart} alt="ShoppingCart" />
