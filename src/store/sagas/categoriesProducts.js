@@ -5,7 +5,7 @@ import { Creators as CategoriesProductsActions } from "../ducks/categoriesProduc
 
 export function* getCategoriesProducts() {
     try {
-        const response = yield call(api.get, "/category_products");
+        const response = yield call(api.get, "/category_products/");
 
         yield put(
             CategoriesProductsActions.getCategoriesProductsSuccess(

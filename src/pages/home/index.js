@@ -14,7 +14,6 @@ import { ContainerProducts } from "./styles";
 class Home extends Component {
     componentDidMount() {
         this.props.getCategoriesProductsRequest();
-        console.log(this.props.categoriesProducts);
     }
 
     render() {
@@ -26,11 +25,13 @@ class Home extends Component {
                     {this.props.categoriesProducts.data.map(categories =>
                         categories.products.map(product => (
                             <div key={product.id}>
-                                {console.log(categories.id)}
                                 <img src={product.image} alt="Product" />
                                 <strong>{product.name}</strong>
                                 <small>{product.brand}</small>
-                                <h1>R${product.price}</h1>
+                                <h1>
+                                    R$
+                                    {product.price}
+                                </h1>
                             </div>
                         ))
                     )}

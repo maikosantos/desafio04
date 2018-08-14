@@ -1,6 +1,6 @@
 export const Types = {
-    GET_REQUEST: "categoriesProducts/GET_REQUEST",
-    GET_SUCCESSS: "categoriesProducts/GET_SUCCESS"
+    GET_REQUEST: "categoryProducts/GET_REQUEST",
+    GET_SUCCESSS: "categoryProducts/GET_SUCCESS"
 };
 
 const INITIAL_STATE = {
@@ -8,7 +8,7 @@ const INITIAL_STATE = {
     loading: false
 };
 
-export default function categoriesProducts(state = INITIAL_STATE, action) {
+export default function categoryProducts(state = INITIAL_STATE, action) {
     switch (action.type) {
         case Types.GET_REQUEST:
             return { ...state, loading: true };
@@ -20,11 +20,12 @@ export default function categoriesProducts(state = INITIAL_STATE, action) {
 }
 
 export const Creators = {
-    getCategoriesProductsRequest: () => ({
-        type: Types.GET_REQUEST
+    getCategoryProductsRequest: id => ({
+        type: Types.GET_REQUEST,
+        payload: { id }
     }),
 
-    getCategoriesProductsSuccess: data => ({
+    getCategoryProductsSuccess: data => ({
         type: Types.GET_SUCCESSS,
         payload: { data }
     })
