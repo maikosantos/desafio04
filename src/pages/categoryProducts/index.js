@@ -28,13 +28,16 @@ class CategoryProducts extends Component {
     }
 
     render() {
-        const products = this.props.categoryProducts.data.products;
         return (
             <Fragment>
                 <Header />
                 <Menu />
                 <ContainerProducts>
-                    {products.map(product => product.map(p => p.id))}
+                    {this.props.categoryProducts.values.data.products.map(
+                        product => (
+                            <div>{product.id}</div>
+                        )
+                    )}
                 </ContainerProducts>
             </Fragment>
         );
