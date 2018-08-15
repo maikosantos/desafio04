@@ -33,11 +33,20 @@ class CategoryProducts extends Component {
                 <Header />
                 <Menu />
                 <ContainerProducts>
-                    {this.props.categoryProducts.values.data.products.map(
-                        product => (
-                            <div>{product.id}</div>
-                        )
-                    )}
+                    {this.props.categoryProducts.data.products &&
+                        this.props.categoryProducts.data.products.map(
+                            product => (
+                                <div key={product.id}>
+                                    <img src={product.image} alt="Product" />
+                                    <strong>{product.name}</strong>
+                                    <small>{product.brand}</small>
+                                    <h1>
+                                        R$
+                                        {product.price}
+                                    </h1>
+                                </div>
+                            )
+                        )}
                 </ContainerProducts>
             </Fragment>
         );

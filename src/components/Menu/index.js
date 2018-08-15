@@ -10,7 +10,6 @@ import { Container, Nav } from "./styles";
 class Menu extends Component {
     componentDidMount() {
         this.props.getCategoriesRequest();
-        //console.log(this.props.categories);
     }
 
     render() {
@@ -18,7 +17,7 @@ class Menu extends Component {
             <Container>
                 <Nav>
                     {this.props.categories.data.map(category => (
-                        <li key={category.id}>
+                        <li key={category.id} active>
                             <Link to={`/category_products/${category.id}`}>
                                 {category.title}
                             </Link>

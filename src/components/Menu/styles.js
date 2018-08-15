@@ -33,7 +33,10 @@ export const Nav = styled.ul`
             opacity: 0.6;
 
             &:hover {
-                color: #ffffff;
+                opacity: unset;
+            }
+
+            &:active {
                 opacity: unset;
             }
         }
