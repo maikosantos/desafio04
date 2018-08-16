@@ -10,8 +10,6 @@ import Header from "../../components/Header";
 
 import { ContainerProducts } from "./styles";
 
-//import Product from "../../assets/images/product.jpg";
-
 class Home extends Component {
     componentDidMount() {
         this.props.getCategoriesProductsRequest();

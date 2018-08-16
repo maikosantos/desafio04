@@ -52,15 +52,15 @@ export const DivInfo = styled.div`
         color: #37bea9;
         font-size: 24px;
         font-weight: bold;
-        margin-top: 35px;
+        margin-top: 45px;
         letter-spacing: 1.11px;
     }
 
     a {
         height: 50px;
-        width: 450px;
+        width: 480px;
         background: #37bea9;
-        margin-top: 35px;
+        margin-top: 15px;
         text-decoration: none;
         text-align: center;
         padding-top: 16px;
