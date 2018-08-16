@@ -17,7 +17,7 @@ class Menu extends Component {
             <Container>
                 <Nav>
                     {this.props.categories.data.map(category => (
-                        <li key={category.id} active>
+                        <li key={category.id}>
                             <Link to={`/category_products/${category.id}`}>
                                 {category.title}
                             </Link>

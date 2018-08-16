@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Creators as ProductActions } from "../../store/ducks/product";
+import { Creators as CartActions } from "../../store/ducks/cart";
 
 import Menu from "../../components/Menu";
 import Header from "../../components/Header";
@@ -17,7 +18,7 @@ class DetailsProduct extends Component {
 
     loadProduct() {
         const { id } = this.props.match.params;
-        console.log(id);
+        //console.log(id);
         this.props.getProductRequest(id);
     }
 
@@ -40,7 +41,14 @@ class DetailsProduct extends Component {
                             R$
                             {this.props.product.data.price}
                         </h1>
-                        <Link to={`/products/${this.props.product.data.id}`}>
+                        <Link
+                            to={`/products/${this.props.product.data.id}`}
+                            onClick={() =>
+                                this.props.getCartAdd(
+                                    this.props.product.data.id
+                                )
+                            }
+                        >
                             <span>ADICIONAR AO CARRINHO</span>
                         </Link>
                     </DivInfo>
@@ -51,11 +59,12 @@ class DetailsProduct extends Component {
 }
 
 const mapStateToProps = state => ({
-    product: state.product
+    product: state.product,
+    cart: state.cart
 });
 
 const mapDispatchToProps = dispatch =>
-    bindActionCreators(ProductActions, dispatch);
+    bindActionCreators(...ProductActions, ...CartActions, dispatch);
 
 export default connect(
     mapStateToProps,

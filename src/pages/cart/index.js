@@ -1,5 +1,19 @@
 import React from "react";
 
-const Carrinho = () => <h1>Carrinho</h1>;
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Creators as CartActions } from "../../store/ducks/cart";
 
-export default Carrinho;
+const Cart = ({ cart }) => <h1>{cart.items.length}</h1>;
+
+const mapStateToProps = state => ({
+    cart: state.cart
+});
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(CartActions, dispatch);
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Cart);
