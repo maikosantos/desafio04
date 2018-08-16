@@ -9,7 +9,7 @@ export const ContainerProducts = styled.div`
     grid-row-gap: 20px;
     margin: 20px 230px;
 
-    div {
+    a {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -18,6 +18,7 @@ export const ContainerProducts = styled.div`
         width: 230px;
         height: 340px;
         border: solid 1px #eeeeee;
+        text-decoration: none;
 
         img {
             height: 180px;

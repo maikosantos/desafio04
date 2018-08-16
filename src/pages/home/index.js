@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -24,7 +25,10 @@ class Home extends Component {
                 <ContainerProducts>
                     {this.props.categoriesProducts.data.map(categories =>
                         categories.products.map(product => (
-                            <div key={product.id}>
+                            <Link
+                                key={product.id}
+                                to={`/products/${product.id}`}
+                            >
                                 <img src={product.image} alt="Product" />
                                 <strong>{product.name}</strong>
                                 <small>{product.brand}</small>
@@ -32,7 +36,7 @@ class Home extends Component {
                                     R$
                                     {product.price}
                                 </h1>
-                            </div>
+                            </Link>
                         ))
                     )}
                 </ContainerProducts>
