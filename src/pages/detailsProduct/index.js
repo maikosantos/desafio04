@@ -18,7 +18,7 @@ class DetailsProduct extends Component {
 
     loadProduct() {
         const { id } = this.props.match.params;
-        //console.log(id);
+        console.log(id);
         this.props.getProductRequest(id);
     }
 
@@ -42,7 +42,7 @@ class DetailsProduct extends Component {
                             {this.props.product.data.price}
                         </h1>
                         <Link
-                            to={`/products/${this.props.product.data.id}`}
+                            to={`/cart/`}
                             onClick={() =>
                                 this.props.getCartAdd(
                                     this.props.product.data.id
@@ -64,6 +64,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch =>
+    //bindActionCreators(ProductActions, dispatch);
     bindActionCreators(...ProductActions, ...CartActions, dispatch);
 
 export default connect(
