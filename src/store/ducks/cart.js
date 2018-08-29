@@ -14,6 +14,7 @@ export default function cart(state = INITIAL_STATE, action) {
                 ...state,
                 items: [...state.items, { id: action.payload.id }]
             };
+
         case Types.REMOVE_ITEM:
             return {
                 ...state,

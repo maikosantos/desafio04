@@ -60,12 +60,11 @@ class DetailsProduct extends Component {
 
 const mapStateToProps = state => ({
     product: state.product,
-    cart: state.cart
+    cart: state
 });
 
 const mapDispatchToProps = dispatch =>
-    //bindActionCreators(ProductActions, dispatch);
-    bindActionCreators(...ProductActions, ...CartActions, dispatch);
+    bindActionCreators({ ...ProductActions, ...CartActions }, dispatch);
 
 export default connect(
     mapStateToProps,
