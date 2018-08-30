@@ -18,7 +18,7 @@ class DetailsProduct extends Component {
 
     loadProduct() {
         const { id } = this.props.match.params;
-        console.log(id);
+        //console.log(id);
         this.props.getProductRequest(id);
     }
 
