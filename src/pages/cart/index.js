@@ -1,10 +1,22 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Creators as CartActions } from "../../store/ducks/cart";
 
-const Cart = ({ cart }) => <h1> {cart.items.length}</h1>;
+import Menu from "../../components/Menu";
+import Header from "../../components/Header";
+
+class Cart extends Component {
+    render() {
+        return (
+            <Fragment>
+                <Header />
+                <Menu />
+            </Fragment>
+        );
+    }
+}
 
 const mapStateToProps = state => ({
     cart: state.cart

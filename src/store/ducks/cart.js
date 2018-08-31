@@ -36,12 +36,12 @@ export default function cart(state = INITIAL_STATE, action) {
 }
 
 export const Creators = {
-    getCartAdd: id => ({
+    addProductCart: id => ({
         type: Types.ADD_ITEM,
         payload: { id }
     }),
 
-    getCartRemove: id => ({
+    removeProductCart: id => ({
         type: Types.REMOVE_ITEM,
         payload: { id }
     })

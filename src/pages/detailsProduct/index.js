@@ -18,7 +18,6 @@ class DetailsProduct extends Component {
 
     loadProduct() {
         const { id } = this.props.match.params;
-        //console.log(id);
         this.props.getProductRequest(id);
     }
 
@@ -44,7 +43,7 @@ class DetailsProduct extends Component {
                         <Link
                             to={`/cart/`}
                             onClick={() =>
-                                this.props.getCartAdd(
+                                this.props.addProductCart(
                                     this.props.product.data.id
                                 )
                             }

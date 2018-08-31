@@ -4,17 +4,13 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Creators as CategoriesActions } from "../../store/ducks/categories";
+import { Creators as CartActions } from "../../store/ducks/cart";
 
 import ShoppingCart from "../../assets/images/shopping-cart.png";
 
 import { Container, Logo, Carrinho } from "./styles";
 
 class Header extends Component {
-    componentDidMount() {
-        //this.props.getCategoriesRequest();
-        //console.log(this.props.categories);
-    }
-
     render() {
         return (
             <Container>
@@ -25,7 +21,9 @@ class Header extends Component {
                 </Logo>
                 <Carrinho>
                     <img src={ShoppingCart} alt="ShoppingCart" />
-                    <span>Meu carrinho (3)</span>
+                    <Link to={`/cart/`}>
+                        Meu carrinho ({this.props.cart.items.length})
+                    </Link>
                 </Carrinho>
             </Container>
         );
@@ -33,11 +31,12 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => ({
-    categories: state.categories
+    categories: state.categories,
+    cart: state.cart
 });
 
 const mapDispatchToProps = dispatch =>
-    bindActionCreators(CategoriesActions, dispatch);
+    bindActionCreators({ ...CartActions, ...CategoriesActions }, dispatch);
 
 export default connect(
     mapStateToProps,
