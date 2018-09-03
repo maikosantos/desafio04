@@ -17,7 +17,16 @@ export default function cart(state = INITIAL_STATE, action) {
             if (!item) {
                 return {
                     ...state,
-                    items: [...state.items, { id: action.payload.id }]
+                    items: [
+                        ...state.items,
+                        {
+                            id: action.payload.id,
+                            name: action.payload.name,
+                            brand: action.payload.brand,
+                            image: action.payload.image,
+                            price: action.payload.price
+                        }
+                    ]
                 };
             } else {
                 return state;
@@ -36,9 +45,9 @@ export default function cart(state = INITIAL_STATE, action) {
 }
 
 export const Creators = {
-    addProductCart: id => ({
+    addProductCart: (id, name, brand, image, price) => ({
         type: Types.ADD_ITEM,
-        payload: { id }
+        payload: { id, name, brand, image, price }
     }),
 
     removeProductCart: id => ({

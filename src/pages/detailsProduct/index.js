@@ -44,7 +44,11 @@ class DetailsProduct extends Component {
                             to={`/cart/`}
                             onClick={() =>
                                 this.props.addProductCart(
-                                    this.props.product.data.id
+                                    this.props.product.data.id,
+                                    this.props.product.data.name,
+                                    this.props.product.data.brand,
+                                    this.props.product.data.image,
+                                    this.props.product.data.price
                                 )
                             }
                         >
