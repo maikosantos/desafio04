@@ -60,9 +60,21 @@ class Cart extends Component {
                                             <small>{item.brand}</small>
                                         </DivProduct>
                                     </td>
-                                    <td>{item.price}</td>
-                                    <td>{item.id}</td>
-                                    <td>{item.id}</td>
+                                    <td>
+                                        <span>
+                                            R$
+                                            {item.price}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <input type="text" />
+                                    </td>
+                                    <td>
+                                        <span>
+                                            R$
+                                            {item.price}
+                                        </span>
+                                    </td>
                                     <td>
                                         <button onClick={() => alert(item.id)}>
                                             <img

@@ -29,6 +29,7 @@ export const ContainerItems = styled.table`
 export const RowsItem = styled.tr`
     height: 80px;
     text-align: right;
+    align-content: flex-start;
 
     td {
         border-top: 1px solid #eeeeee;
@@ -50,6 +51,17 @@ export const RowsItem = styled.tr`
             border: 0;
             margin: 0 15px;
         }
+
+        input {
+            width: 50px;
+            text-align: center;
+        }
+
+        span {
+            color: #37bea9;
+            font-weight: bold;
+            font-size: 24px;
+        }
     }
 
     &:hover td {
@@ -58,20 +70,25 @@ export const RowsItem = styled.tr`
 `;
 
 export const DivProduct = styled.div`
-    height: 100%;
+    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 60px;
 
     strong {
         color: #333333;
         font-size: 18px;
+        display: flex;
+        justify-content: flex-end;
     }
 
     small {
         color: #c0c0c0;
         font-size: 14px;
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-self: flex-start;
     }
 `;
 
