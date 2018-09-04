@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-/*
-export const ContainerItem = styled.div`
-    height: 100%;
-    width: 980px;
-    display: flex;
-    margin: 20px 230px;
-`;*/
-
 export const ContainerItems = styled.table`
     height: 100%;
     width: 980px;

@@ -11,6 +11,12 @@ import Header from "../../components/Header";
 
 import { ContainerProducts, DivImage, DivInfo } from "./styles";
 
+const intlMonetary = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimunFractionDigits: 2
+});
+
 class DetailsProduct extends Component {
     componentDidMount() {
         this.loadProduct();
@@ -37,8 +43,7 @@ class DetailsProduct extends Component {
                         <strong>{this.props.product.data.name}</strong>
                         <small>{this.props.product.data.brand}</small>
                         <h1>
-                            R$
-                            {this.props.product.data.price}
+                            {intlMonetary.format(this.props.product.data.price)}
                         </h1>
                         <Link
                             to={`/cart/`}

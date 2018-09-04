@@ -11,6 +11,12 @@ import { ContainerItems, RowsItem, DivProduct, DivImage } from "./styles";
 
 import RemoveIcon from "../../assets/images/remove.svg";
 
+const intlMonetary = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimunFractionDigits: 2
+});
+
 class Cart extends Component {
     render() {
         return (
@@ -62,8 +68,7 @@ class Cart extends Component {
                                     </td>
                                     <td>
                                         <span>
-                                            R$
-                                            {item.price}
+                                            {intlMonetary.format(item.price)}
                                         </span>
                                     </td>
                                     <td>
@@ -71,8 +76,7 @@ class Cart extends Component {
                                     </td>
                                     <td>
                                         <span>
-                                            R$
-                                            {item.price}
+                                            {intlMonetary.format(item.price)}
                                         </span>
                                     </td>
                                     <td>
