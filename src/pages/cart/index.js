@@ -7,7 +7,9 @@ import { Creators as CartActions } from "../../store/ducks/cart";
 import Menu from "../../components/Menu";
 import Header from "../../components/Header";
 
-import { ContainerItems } from "./styles";
+import { ContainerItems, RowsItem, DivProduct, DivImage } from "./styles";
+
+import RemoveIcon from "../../assets/images/remove.svg";
 
 class Cart extends Component {
     render() {
@@ -15,10 +17,64 @@ class Cart extends Component {
             <Fragment>
                 <Header />
                 <Menu />
-                <ContainerItems>
-                    {this.props.cart.items.map(item => (
-                        <div key={item.id}>{item.name}</div>
-                    ))}
+                <ContainerItems cellPadding={0} cellSpacing={0}>
+                    <thead>
+                        <th />
+                        <th
+                            style={{
+                                textAlign: "left"
+                            }}
+                        >
+                            PRODUTO
+                        </th>
+                        <th>VALOR</th>
+                        <th>QTDE</th>
+                        <th>SUBTOTAL</th>
+                        <th />
+                    </thead>
+                    <tbody>
+                        {this.props.cart.items.length === 0 ? (
+                            <tr>
+                                <td
+                                    colSpan={5}
+                                    style={{
+                                        color: "#D45454",
+                                        textAlign: "center"
+                                    }}
+                                >
+                                    <h1>Nenhum item no carrinho!</h1>
+                                </td>
+                            </tr>
+                        ) : (
+                            this.props.cart.items.map(item => (
+                                <RowsItem key={item.id}>
+                                    <td>
+                                        <DivImage>
+                                            <img src={item.image} alt="image" />
+                                        </DivImage>
+                                    </td>
+
+                                    <td>
+                                        <DivProduct>
+                                            <strong>{item.name}</strong>
+                                            <small>{item.brand}</small>
+                                        </DivProduct>
+                                    </td>
+                                    <td>{item.price}</td>
+                                    <td>{item.id}</td>
+                                    <td>{item.id}</td>
+                                    <td>
+                                        <button onClick={() => alert(item.id)}>
+                                            <img
+                                                src={RemoveIcon}
+                                                alt="Remove"
+                                            />
+                                        </button>
+                                    </td>
+                                </RowsItem>
+                            ))
+                        )}
+                    </tbody>
                 </ContainerItems>
             </Fragment>
         );
