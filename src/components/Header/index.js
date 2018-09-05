@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
+import LoadingBar from "react-redux-loading-bar";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -14,11 +15,18 @@ class Header extends Component {
     render() {
         return (
             <Container>
+                <LoadingBar
+                    style={{ backgroundColor: "purple", height: "8px" }}
+                    updateTime={50}
+                    maxProgress={95}
+                    progressIncrease={5}
+                />
                 <Logo>
                     <h1>
                         <Link to="/">GoCommerce</Link>
                     </h1>
                 </Logo>
+
                 <Carrinho>
                     <img src={ShoppingCart} alt="ShoppingCart" />
                     <Link to={`/cart/`}>

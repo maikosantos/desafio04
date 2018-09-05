@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { loadingBarReducer } from "react-redux-loading-bar";
 
 import categories from "./categories";
 import categoriesProducts from "./categoriesProducts";
@@ -11,5 +12,6 @@ export default combineReducers({
     categoriesProducts,
     categoryProducts,
     product,
-    cart
+    cart,
+    loadingBar: loadingBarReducer
 });

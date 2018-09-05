@@ -16,6 +16,7 @@ import {
 } from "./styles";
 
 import RemoveIcon from "../../assets/images/remove.svg";
+import { createSelector } from "../../../node_modules/reselect";
 
 const intlMonetary = new Intl.NumberFormat("pt-BR", {
     style: "currency",
