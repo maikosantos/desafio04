@@ -5,6 +5,7 @@ export const ContainerItems = styled.table`
     width: 980px;
     margin: 20px 230px;
     text-align: right;
+    border: solid 1px #eeeeee;
 
     thead th {
         font-size: 16px;

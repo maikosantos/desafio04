@@ -35,7 +35,7 @@ export default function cart(state = INITIAL_STATE, action) {
         case Types.REMOVE_ITEM:
             return {
                 ...state,
-                items: state.data.filter(
+                items: state.items.filter(
                     product => product.id !== action.payload.id
                 )
             };

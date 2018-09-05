@@ -80,7 +80,13 @@ class Cart extends Component {
                                         </span>
                                     </td>
                                     <td>
-                                        <button onClick={() => alert(item.id)}>
+                                        <button
+                                            onClick={() =>
+                                                this.props.removeProductCart(
+                                                    item.id
+                                                )
+                                            }
+                                        >
                                             <img
                                                 src={RemoveIcon}
                                                 alt="Remove"
