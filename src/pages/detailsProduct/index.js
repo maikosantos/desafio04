@@ -53,7 +53,8 @@ class DetailsProduct extends Component {
                                     this.props.product.data.name,
                                     this.props.product.data.brand,
                                     this.props.product.data.image,
-                                    this.props.product.data.price
+                                    this.props.product.data.price,
+                                    1
                                 )
                             }
                         >

@@ -1,5 +1,30 @@
 import styled from "styled-components";
 
+export const ContainerTotal = styled.div`
+    height: 80px;
+    width: 980px;
+    margin: 20px 100px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+
+    div {
+        &:first-child {
+            font-size: 18px;
+            color: #999999;
+            font-weight: bold;
+            padding: 10px 60px 0 20px;
+        }
+
+        &:last-child {
+            font-size: 30px;
+            color: #37bea9;
+            font-weight: bold;
+            line-height: 38px;
+        }
+    }
+`;
+
 export const ContainerItems = styled.table`
     height: 100%;
     width: 980px;
