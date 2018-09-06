@@ -8,10 +8,13 @@ import "./styles/global";
 import Routes from "./routes";
 import store from "./store";
 
+import Loading from "./components/Loading";
+
 const App = () => (
     <Provider store={store}>
         <BrowserRouter>
             <div>
+                <Loading />
                 <Routes />
             </div>
         </BrowserRouter>
