@@ -8,9 +8,13 @@ class Loading extends Component {
         return (
             <Container>
                 <LoadingBar
-                    style={{ backgroundColor: "#37bea9", height: "8px" }}
-                    updateTime={50}
-                    maxProgress={95}
+                    style={{
+                        backgroundColor: "#37bea9",
+                        height: "8px",
+                        position: "absolute"
+                    }}
+                    updateTime={100}
+                    maxProgress={100}
                     progressIncrease={10}
                     showFastActions
                 />
