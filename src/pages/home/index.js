@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -17,6 +18,21 @@ const intlMonetary = new Intl.NumberFormat("pt-BR", {
 });
 
 class Home extends Component {
+    static propTypes = {
+        getCategoriesProductsRequest: PropTypes.func.isRequired,
+        categoriesProducts: PropTypes.shape({
+            product: PropTypes.arrayOf(
+                PropTypes.shape({
+                    id: PropTypes.number,
+                    name: PropTypes.string,
+                    brand: PropTypes.string,
+                    image: PropTypes.object,
+                    price: PropTypes.number
+                })
+            )
+        }).isRequired
+    };
+
     componentDidMount() {
         this.props.getCategoriesProductsRequest();
     }

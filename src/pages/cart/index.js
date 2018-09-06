@@ -16,7 +16,6 @@ import {
 } from "./styles";
 
 import RemoveIcon from "../../assets/images/remove.svg";
-import { createSelector } from "../../../node_modules/reselect";
 
 const intlMonetary = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -63,7 +62,7 @@ class Cart extends Component {
                                 <RowsItem key={item.id}>
                                     <td>
                                         <DivImage>
-                                            <img src={item.image} alt="image" />
+                                            <img src={item.image} alt="img" />
                                         </DivImage>
                                     </td>
 
